@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ticket</class>
+ <widget class="QWidget" name="ticket">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1248</width>
+    <height>486</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>70</y>
+     <width>201</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_25">
+    <item>
+     <widget class="QLabel" name="label_16">
+      <property name="text">
+       <string>Estimated Cost:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_31"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>1010</x>
+     <y>390</y>
+     <width>221</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_26">
+    <item>
+     <widget class="QLabel" name="label_25">
+      <property name="text">
+       <string>Ticket status:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_32"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="label_26">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>190</y>
+     <width>131</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Issue Description</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>930</x>
+     <y>70</y>
+     <width>291</width>
+     <height>125</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_10">
+    <item>
+     <widget class="QListWidget" name="listWidget_4">
+      <item>
+       <property name="text">
+        <string>description</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>service cost</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>client attitude</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>190</y>
+     <width>541</width>
+     <height>221</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listWidget_5">
+   <property name="geometry">
+    <rect>
+     <x>930</x>
+     <y>210</y>
+     <width>291</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Name</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Amount</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Price</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Total</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_4">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>440</y>
+     <width>381</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_27">
+    <item>
+     <widget class="QLabel" name="label_33">
+      <property name="text">
+       <string>Estimated Repair Date:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_33"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="label_35">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>120</y>
+     <width>271</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>这些都是自动生成的</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_36">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>30</y>
+     <width>181</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>MAINTENANCE TICKET</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_5">
+   <property name="geometry">
+    <rect>
+     <x>847</x>
+     <y>320</y>
+     <width>381</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_28">
+    <item>
+     <widget class="QLabel" name="label_37">
+      <property name="text">
+       <string>Actual working time period:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_34"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_6">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>50</y>
+     <width>431</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_29">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_11">
+      <item>
+       <widget class="QLabel" name="label_38">
+        <property name="text">
+         <string>       Brand</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_39">
+        <property name="text">
+         <string>         Type</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_40">
+        <property name="text">
+         <string>Registration ID</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_12">
+      <item>
+       <widget class="QLineEdit" name="lineEdit_35"/>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_36"/>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_37"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_7">
+   <property name="geometry">
+    <rect>
+     <x>910</x>
+     <y>360</y>
+     <width>321</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_30">
+    <item>
+     <widget class="QLabel" name="label_41">
+      <property name="text">
+       <string>Actual working staff:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_38"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_8">
+   <property name="geometry">
+    <rect>
+     <x>930</x>
+     <y>20</y>
+     <width>291</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_31">
+    <item>
+     <widget class="QLabel" name="label_42">
+      <property name="text">
+       <string>Maintenance staff:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_39"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="label_43">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>130</y>
+     <width>161</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>右边是可编辑的</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_9">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>210</y>
+     <width>171</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_32">
+    <item>
+     <widget class="QLabel" name="label_44">
+      <property name="text">
+       <string>Parts Cost:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_40"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="editbtn">
+   <property name="geometry">
+    <rect>
+     <x>1030</x>
+     <y>450</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Edit</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="finishbtn">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>450</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Finish</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
