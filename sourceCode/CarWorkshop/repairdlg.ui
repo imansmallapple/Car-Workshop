@@ -26,19 +26,6 @@
     <string>Apply Ticket</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="cancelbtn">
-   <property name="geometry">
-    <rect>
-     <x>1070</x>
-     <y>400</y>
-     <width>111</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Cancel</string>
-   </property>
-  </widget>
   <widget class="QTableView" name="tableView">
    <property name="geometry">
     <rect>
@@ -96,19 +83,6 @@
      <width>741</width>
      <height>341</height>
     </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="editbtn">
-   <property name="geometry">
-    <rect>
-     <x>1060</x>
-     <y>40</y>
-     <width>121</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Edit slot</string>
    </property>
   </widget>
  </widget>

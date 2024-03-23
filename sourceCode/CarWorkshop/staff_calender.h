@@ -13,6 +13,7 @@
 #include <QPrinter>
 #include <QSqlRecord>
 #include <QFont>
+#include <QMessageBox>
 
 namespace Ui {
 class staff_calender;

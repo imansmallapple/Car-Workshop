@@ -10,6 +10,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    add_parts.cpp \
     add_staff.cpp \
     bossuse.cpp \
     calender_query.cpp \
@@ -19,13 +20,12 @@ SOURCES += \
     mainwindow.cpp \
     repairdlg.cpp \
     set_status.cpp \
-    slots_table.cpp \
     staff_calender.cpp \
-    staffuse.cpp \
     ticket.cpp \
-    update_slots.cpp
+    ticket_basic_query.cpp
 
 HEADERS += \
+    add_parts.h \
     add_staff.h \
     bossuse.h \
     calender_query.h \
@@ -34,13 +34,12 @@ HEADERS += \
     mainwindow.h \
     repairdlg.h \
     set_status.h \
-    slots_table.h \
     staff_calender.h \
-    staffuse.h \
     ticket.h \
-    update_slots.h
+    ticket_basic_query.h
 
 FORMS += \
+    add_parts.ui \
     add_staff.ui \
     bossuse.ui \
     calender_query.ui \
@@ -49,11 +48,9 @@ FORMS += \
     mainwindow.ui \
     repairdlg.ui \
     set_status.ui \
-    slots_table.ui \
     staff_calender.ui \
-    staffuse.ui \
     ticket.ui \
-    update_slots.ui
+    ticket_basic_query.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

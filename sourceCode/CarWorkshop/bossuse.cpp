@@ -32,10 +32,6 @@ bossUse::bossUse(QWidget *parent)
 
     connect(ui->calenderbtn,SIGNAL(clicked()),this,SLOT(calenderbtn_clicked()),Qt::UniqueConnection);
 
-
-
-
-
     //------------------------------------------------------------------------------------
     //Define database Qsqlite
     staffdb = QSqlDatabase::addDatabase("QSQLITE","sqlite1");
@@ -71,9 +67,21 @@ bossUse::~bossUse()
 
     // 移除数据库连接
     QSqlDatabase::removeDatabase("sqlite1");
-
     delete ui;
 }
+
+void bossUse::send_name_list(){
+    QStringList names;
+    QSqlQuery query1("select name from staffinfo", staffdb);
+    while (query1.next()) {
+        QString data = query1.value(1).toString();
+        names.append(query1.value(1).toString());
+    }
+    emit sendStaffList(names);
+    // emit sendStaffList();
+}
+
+
 
 void bossUse::addbtn_clicked(){
     addPage = new add_staff();//create addpage window

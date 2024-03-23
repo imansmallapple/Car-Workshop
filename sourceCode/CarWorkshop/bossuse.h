@@ -35,6 +35,7 @@ signals:
     void backFromBossUse();
     void haveName(QString);
     void dontHaveName();
+    void sendStaffList(QStringList names);
 
 private slots:
     void getFromAddStaffData(QString receivedData);//receive string infomation from add page
@@ -49,6 +50,9 @@ private slots:
 
     void haveEmptyInput();
     void deleteInvalidStaff();
+
+    void send_name_list();
+
 
 private:
     Ui::bossUse *ui;

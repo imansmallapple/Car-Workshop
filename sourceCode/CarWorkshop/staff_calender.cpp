@@ -140,6 +140,7 @@ void staff_calender::exportToPdf(){
         ++row;
     }
     painter.end();
+     QMessageBox::about(this,"Notice","PDF file saved!");
 }
 
 void staff_calender::saveBtnClicked(){

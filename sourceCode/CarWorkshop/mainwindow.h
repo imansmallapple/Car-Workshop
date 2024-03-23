@@ -29,14 +29,14 @@ public:
     //Save staffuse installation address
     repairDlg *staff_use_page = NULL;
 
-
-
 private slots:
-    void on_bossbtn_clicked();
+    void employeeBtnClicked();
+    void get_staff_name(QString);
+    void check_staff_name(QStringList);
 
 private:
     Ui::MainWindow *ui;
-
+    QString staff_name;
 
 };
 #endif // MAINWINDOW_H
