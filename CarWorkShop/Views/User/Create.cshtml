@@ -1,0 +1,63 @@
+﻿@using CarWorkShop.ViewModels;
+@model CreateUserViewModel;
+
+ @{
+ Layout = "_Layout";
+ }
+
+ <div class="container p-3 my-3 border" >
+ <h1> Create Employee </h1>
+
+ <div class="row">
+ <div class="col-sm-6">
+ <hr />
+<form method="post" asp-action="Create">
+				@{
+					if (TempData["Error"] != null)
+					{
+						<div class="alert alert-danger">
+							@TempData["Error"]
+						</div>
+					}
+				}
+
+ <div asp-validation-summary="ModelOnly"
+class="text-danger"></div>  
+
+				<div class="form-group">
+					<label asp-for="Name" class="control-label"></label>
+					<input asp-for="Name" class="form-control" />
+					<span asp-validation-for="Name" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Price" class="control-label"></label>
+					<input asp-for="Price" class="form-control" />
+					<span asp-validation-for="Price" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="EmailAddress" class="control-label"></label>
+					<input asp-for="EmailAddress" class="form-control" />
+					<span asp-validation-for="EmailAddress" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Password" class="control-label"></label>
+					<input asp-for="Password" class="form-control" />
+					<span asp-validation-for="Password" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="ConfirmPassword" class="control-label"></label>
+					<input asp-for="ConfirmPassword" type="password" class="form-control" />
+					<span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+				</div>
+<div class="float-end">
+ <button style="margin-top:10px" class="btn btn-primary" type="submit">Save</button>
+ <a style="margin-top:10px" class="btn btn-danger" asp-action="Index">Back</a>
+ </div>
+ </form>
+ </div>
+ </div>
+ </div>
+ @section Scripts {
+ @{await
+Html.RenderPartialAsync("_ValidationScriptsPartial");}
+ }

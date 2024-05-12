@@ -1,0 +1,26 @@
+﻿@using CarWorkShop.ViewModels;
+@model PartDetailViewModel;
+
+<h1 class="display-4 fw-normal text-center">Ticket Parts</h1>
+<div class="album py-5 bg-light">
+    <div class="container">
+        <h2 class="display-4 fw-normal text-center">You created Parts</h2>
+        <h3 class="text-center">Final Price: @Model.TicketPrice</h3> <!-- Display the total price -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+            @foreach (var item in Model.Parts)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Name</h5>
+                            <p class="card-text">Amount: @item.Amount</p>
+                            <p class="card-text">Unit Price: @item.UnitPrice</p>
+                            <p class="card-text">Total Price: @(item.UnitPrice*item.Amount)</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

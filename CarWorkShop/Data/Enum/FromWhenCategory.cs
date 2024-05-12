@@ -1,0 +1,30 @@
+﻿namespace CarWorkShop.Data.Enum
+{
+    public enum FromWhenCategory
+    {
+        One,
+        Two,
+        Three,
+        Four,
+        Five,
+        Six,
+        Seven,
+        Eight,
+        Nine,
+        Ten,
+        Eleven,
+        Twelve,
+        Thirteen,
+        Fourteen,
+        Fifteen,
+        Sixthteen,
+        Seventeen,
+        Eighteen,
+        Nineteen,
+        Twenty,
+        TwentyOne,
+        TwentyTwo,
+        TwentyThree,
+        TwentyFour
+    }
+}

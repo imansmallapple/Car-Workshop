@@ -1,0 +1,470 @@
+﻿@using CarWorkShop.Data.Enum
+@using CarWorkShop.ViewModels
+@model AcceptCalenderViewModel
+
+
+
+<form method="post" asp-action="Accept">
+    <input type="hidden" id="TicketId" name="TicketId" asp-for="TicketId" />
+    <div class="form-group">
+        <label asp-for="WeekCategory">Choose day</label>
+        @*Select statement*@
+        <select asp-for="WeekCategory" asp-items="@Html.GetEnumSelectList<WeekCategory>()" class="form-control form-control-lg">
+        </select>
+        <span asp-validation-for="WeekCategory" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FromWhenCategory">Time period from</label>
+        @*Select statement*@
+        <select asp-for="FromWhenCategory" asp-items="@Html.GetEnumSelectList<FromWhenCategory>()" class="form-control form-control-lg">
+        </select>
+        <span asp-validation-for="FromWhenCategory" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TillWhenCategory">Time period till</label>
+        @*Select statement*@
+        <select asp-for="TillWhenCategory" asp-items="@Html.GetEnumSelectList<TillWhenCategory>()" class="form-control form-control-lg">
+        </select>
+        <span asp-validation-for="TillWhenCategory" class="text-danger"></span>
+    </div>
+    <div class="float-end">
+        <button type="submit" style="margin-top:10px" class="btn btn-primary">Submit</button>
+    <a style="margin-top:10px" class="btn btn-primary" asp-action="Index">Back</a>
+    </div>
+</form>
+
+@*-----------------------------------------------------------------------------------------------------------------------------------------*@
+@* <style>
+    table {
+        border-collapse: collapse;
+    }
+
+    td {
+        border: 1px solid black;
+        padding: 8px;
+    }
+    th{
+        width: 150px;
+    }
+</style>
+
+<p class="display-5 fw-bold">Please select your slots for this ticket</p>
+<table border="2">
+    <tr>
+        <th>Slots</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+        <th>Sunday</th>
+    </tr>
+    <tr>
+        <td>
+            1:00
+        </td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr>
+    <tr>
+        <td>2:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr>
+    <tr>
+        <td>3:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr>
+    <tr>
+        <td>4:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr>
+    <tr>
+        <td>5:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr>
+    <tr>
+        <td>6:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr>
+    <tr>
+        <td>7:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr>
+    <tr>
+        <td>8:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr>
+    <tr>
+        <td>9:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr>
+    <tr>
+        <td>10:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr>
+    <tr>
+        <td>11:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr>
+    <tr>
+        <td>12:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr>
+    <tr>
+        <td>13:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr>
+    <tr>
+        <td>14:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr>
+    <tr>
+        <td>15:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr> <tr>
+        <td>16:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr> <tr>
+        <td>17:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr> <tr>
+        <td>18:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr>
+    <tr>
+        <td>19:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr>
+    <tr>
+        <td>20:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr>
+    <tr>
+        <td>21:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr>
+    <tr>
+        <td>22:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr>
+ <tr>
+        <td>23:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr>
+    <tr>
+        <td>24:00</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+        <td>            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-sm btn-outline-secondary">Select</a>
+</td>
+    </tr>
+    </table> *@

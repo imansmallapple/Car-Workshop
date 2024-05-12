@@ -1,0 +1,55 @@
+﻿@model Ticket
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Portfolio Item Heading -->
+    <h1 class="my-4">
+        @Model.Brand - 
+        <small>@Model.Model</small>
+    </h1>
+
+    <!-- Portfolio Item Row -->
+    <div class="row">
+
+        <div class="col-md-4">
+            <h3 class="my-3">RegistrationId:</h3>
+            <table>
+                <tr>
+                    <td>@Model.RegistrationId</td>
+                </tr>
+            </table>
+            <h3>Description:</h3>
+            <table>
+                <tr>
+                    <td>@Model.Description</td>
+                </tr>
+            </table>
+            <h3 class="my-3">Employee Assigned: </h3>
+            <table>
+                <tr>
+                    <td>@Model.EmployeeAssigned</td>
+                </tr>
+            </table>
+            <h3 class="my-3">Repair Estimate: </h3>
+            <table>
+                <tr>
+                    <th>Description:</th>
+                    <td>@Model.RepairEstimate.Description</td>
+                </tr>
+                <tr>
+                    <th>Cost:</th>
+                    <td>@Model.RepairEstimate.cost</td>
+                </tr>
+                <tr>
+                    <th>Client Attitude:</th>
+                    <td>@Model.RepairEstimate.AttitudeCategory</td>
+                </tr>
+                <tr>
+                    <th>Client Paid:</th>
+                    <td>@Model.ClientPaid</td>
+                </tr>
+            </table>
+            <a asp-controller="Ticket" asp-action="PartsDetail" asp-route-id="@Model.Id" class="btn btn-sm btn-outline-secondary">View Parts</a>
+        </div>
+    </div>
+</div>

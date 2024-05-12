@@ -1,0 +1,48 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+
+@model CarWorkShop.ViewModels.DashboardViewModel
+
+<div class="container">
+    <div class="jumbotron text-center bg-primary text-white">
+        <h1 class="display-4 fw-normal">User Dashboard</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <a type="button" class="btn btn-success btn-lg btn-block" asp-area="" asp-controller="Ticket" asp-action="Create">Create Ticket</a>
+        </div>
+        <div class="col-md-6">
+            <a type="button" class="btn btn-info btn-lg btn-block" asp-area="" asp-controller="Dashboard" asp-action="EditUserCalender">My Calender</a>
+        </div>
+    </div>
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <h2 class="display-4 fw-normal">You created tickets</h2>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                @foreach (var item in Model.Tickets)
+                {
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm" style="background-color: lightblue;">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Brand - @item.Model</h5>
+                                <p class="card-text">@item.Description</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a type="btn btn-success" asp-controller="Ticket" asp-action="Detail" asp-route-id="@item.Id"
+                                           class="btn btn-sm btn-outline-secondary">View</a>
+                                        @if (SignInManager.IsSignedIn(User))
+                                        {
+                                            <a asp-area="" asp-controller="Dashboard" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                            <a asp-area="" asp-controller="Ticket" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Delete</a>
+                                        }
+                                    </div>
+                                    <small class="text-muted">@item.StateCategory</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

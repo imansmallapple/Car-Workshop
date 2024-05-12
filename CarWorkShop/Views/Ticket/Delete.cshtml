@@ -1,0 +1,42 @@
+﻿﻿@using CarWorkShop.Data.Enum
+@model Ticket
+
+<h1>Are you sure you want to delete this ticket?</h1>
+
+<form method="post" asp-action="Delete">
+    <input type="hidden" id="UserId" name="UserId" asp-for="UserId"/>
+    <div class="form-group">
+        <label asp-for="Brand">Brand</label>
+        <input asp-for="Brand" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="brand" disabled>
+        <span asp-validation-for="Brand" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Model">Model</label>
+        <input asp-for="Model" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="model" disabled>
+        <span asp-validation-for="Model" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RegistrationId">Registration Id</label>
+        <input asp-for="RegistrationId" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="registration id" disabled>
+        <span asp-validation-for="RegistrationId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="StateCategory">Ticket Status</label>
+        @*Select statement*@
+        <select asp-for="StateCategory" asp-items="@Html.GetEnumSelectList<StateCategory>()" class="form-control form-control-lg" disabled>
+            <option selected="selected">Created</option>
+        </select>
+        <span asp-validation-for="StateCategory" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="description" disabled>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+</form>
+<div class="form-group">
+    <form action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Confirm" class="btn btn-danger float-right mt-3" />
+    </form>
+</div>

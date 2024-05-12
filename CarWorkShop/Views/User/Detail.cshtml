@@ -1,0 +1,33 @@
+﻿@model User
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Portfolio Item Heading -->
+    <h1 class="my-4">
+        @Model.Name -
+        <small>@Model.Price PLN/h</small>
+    </h1>
+
+    <!-- Portfolio Item Row -->
+    <div class="row">
+        <div class="col-md-4">
+            <h3 class="my-3">Email Address: </h3>
+            <h3 class="my-3">@Model.Email</h3>
+            </br>
+            <h3 class="my-3">Ticket Calender: </h3>
+            <ul style="display: inline">
+                @if(Model.Calender != null)
+                {
+                <div>From:</div>
+                    <li>@Model.Calender.WeekCategory @Model.Calender.FromWhenCategory o'Clock</li>
+                <div>Till:</div>
+                    <li>@Model.Calender.WeekCategory @Model.Calender.TillWhenCategory o'Clock</li>
+                }
+                else
+                {
+                    <p>Empty</p>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

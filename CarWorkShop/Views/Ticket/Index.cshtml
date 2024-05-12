@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Ticket>
+@{
+    ViewData["Title"] = "Ticket Page";
+}
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <div class="card-body">
+                            <p class="card-text">@item.Brand</p>
+                            <p class="card-text">@item.Description</p>
+                            <p class="card-text">Assigned Employee: @item.EmployeeAssigned</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    @*here we implement the view button place, note that we must include the asp operation inside a label rather than button label*@
+                                    @if (User.Identity.IsAuthenticated && User.IsInRole("user"))
+                                    {
+                                        <a asp-controller="Ticket" asp-action="Detail" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">View</a>
+                                        @*If the employee was not assigned, we can accept this ticket*@
+                                        if (item.EmployeeAssigned == null)
+                                        {
+                                            <a asp-controller="Ticket" asp-action="Accept" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Accept</a>
+                                        }
+                                        else if (item.EmployeeAssigned != null && item.StateCategory.ToString() != "Closed" && item.StateCategory.ToString() != "Done")
+                                        {
+                                            <a asp-controller="Ticket" asp-action="AddParts" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Add Parts</a>
+                                        }
+                                    }
+                                    @if(User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                                    {
+                                        @if (item.StateCategory.ToString() != "Closed")
+                                        {
+                                         <a asp-controller="Ticket" asp-action="Detail" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">View</a>
+                                         <a asp-controller="Ticket" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                         <a asp-controller="Ticket" asp-action="AddParts" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Add Parts</a>
+                                         <a asp-controller="Ticket" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Delete</a>
+                                         <a asp-controller="Ticket" asp-action="Close" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Close</a>                                       
+                                        }
+                                    }
+                                </div>
+                                <small class="text-muted">@item.StateCategory</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

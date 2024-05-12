@@ -1,0 +1,17 @@
+﻿﻿@using CarWorkShop.Data.Enum
+@model Ticket
+
+<h1>Are you sure you want to finish this ticket?</h1>
+
+<form method="post" asp-action="Finish">
+    <input type="hidden" id="UserId" name="UserId" asp-for="UserId" />
+</form>
+<div class="form-group">
+    <form action="Finish" method="post">
+        <input type="hidden" asp-for="Id" />
+        <div class="float-end">
+            <input type="submit" style="margin-top:10px" value="Confirm" class="btn btn-primary" />
+            <a style="margin-top:10px" class="btn btn-primary" asp-action="Index">Back</a>
+        </div>
+    </form>
+</div>

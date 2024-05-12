@@ -1,0 +1,59 @@
+﻿@using CarWorkShop.Data.Enum
+@using CarWorkShop.ViewModels
+@model CreateTicketViewModel
+
+<form method="post" asp-action="Create">
+    <input type="hidden" id="UserId" name="UserId" asp-for="UserId" />
+    <div class="form-group">
+        <label asp-for="Brand">Brand</label>
+        <input asp-for="Brand" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="brand">
+        <span asp-validation-for="Brand" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Model">Model</label>
+        <input asp-for="Model" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="model">
+        <span asp-validation-for="Model" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RegistrationId">Registration Id</label>
+        <input asp-for="RegistrationId" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="registration id">
+        <span asp-validation-for="RegistrationId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="StateCategory">Ticket Status</label>
+        @*Select statement*@
+        <select asp-for="StateCategory" asp-items="@Html.GetEnumSelectList<StateCategory>()" class="form-control form-control-lg" disabled>
+            <option selected="selected">Created</option>
+        </select>
+        <span asp-validation-for="StateCategory" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="description">
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RepairEstimate.Description">Repair Estimate Description*</label>
+        <input asp-for="RepairEstimate.Description" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="estimate description">
+        <span asp-validation-for="RepairEstimate.Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RepairEstimate.cost">Repair Estimate Cost*</label>
+        <input asp-for="RepairEstimate.cost" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="cost">
+        <span asp-validation-for="RepairEstimate.cost" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.RepairEstimate.AttitudeCategory">Client Attitude*</label>
+        <select asp-for="@Model.RepairEstimate.AttitudeCategory" asp-items="@Html.GetEnumSelectList<AttitudeCategory>()" class="form-control form-control-lg">
+            <option>--Select--</option>
+        </select>
+        <span asp-validation-for="@Model.RepairEstimate.AttitudeCategory" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ClientPaid">Client Paid*</label>
+        <input asp-for="ClientPaid" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="client paid">
+        <span asp-validation-for="ClientPaid" class="text-danger"></span>
+    </div>
+        <div id="lines"></div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

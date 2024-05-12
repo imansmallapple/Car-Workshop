@@ -1,0 +1,14 @@
+﻿@using CarWorkShop.ViewModels;
+@model TicketCalenderViewModel
+
+<h1 class="display-4 fw-normal text-center">Ticket Calender</h1>
+<div class="album py-5 bg-light">
+    <div class="container">
+        <h2 class="display-4 fw-normal text-center">You working time for this ticket</h2>
+        <h3 class="text-center">Which day this week: @Model.WeekCategory</h3> <!-- Display the total price -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <p class="card-text">From: @Model.FromWhenCategory</p>
+            <p class="card-text">Until: @Model.TillWhenCategory</p>
+        </div>
+    </div>
+</div>

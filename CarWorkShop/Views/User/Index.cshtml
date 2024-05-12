@@ -1,0 +1,56 @@
+﻿﻿@using CarWorkShop.ViewModels
+@model List<UserViewModel>
+
+ @{
+ Layout = "_Layout";
+ }
+ <h1>Employee List</h1>
+
+ <div style="text-align:right;margin-right:20px;">
+ @using (Html.BeginForm("Create", "User", FormMethod.Post))
+ {
+ <a type="button" class="btn btn-primary" asp-area="" asp-controller="User" asp-action="Create">Add Employee</a>
+ }
+ </div>
+
+ <div class="table-responsive">
+ <table class="table">
+ <thead>
+ <tr>
+ <th>Name</th>
+ <th>Salary</th>
+ <th>Actions</th>
+ </tr>
+ </thead>
+ <tbody>
+ @foreach (var item in Model)
+ {
+ <tr>
+                    <td>
+                         @Html.DisplayFor(modelItem => item.UserName)
+                        
+                    </td>
+                    
+                    <td>
+                         @Html.DisplayFor(modelItem => item.Price)
+                        
+                    </td>
+
+                    <td>
+                         <a asp-action="Detail" class="btn btn-outline-primary"
+                               asp-route-id="@item.Id">View</a>
+                         <a asp-action="Edit" class="btn btn-outline-primary"
+                               asp-route-id="@item.Id">Edit</a>
+                         <a asp-action="Delete" class="btn btn-outline-danger"
+                               asp-route-id="@item.Id">Delete</a>
+                        
+                    </td>
+                    
+</tr>
+}
+            
+        </tbody>
+        
+    </table>
+    
+</div>
