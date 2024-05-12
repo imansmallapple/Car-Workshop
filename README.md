@@ -1,5 +1,5 @@
 # Car-Workshop
-Goal of the project is to implement an application for managing a car workshop.
+Goal of the project is to implement an application for managing a car workshop using MVC architecture.
 ## Contained functionality
 ### Employee management (done by 'admin' user)
 
