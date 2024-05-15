@@ -1,5 +1,7 @@
 # Car-Workshop
 Goal of the project is to implement an application for managing a car workshop using MVC architecture.
+![image](https://github.com/imansmallapple/Car-Workshop/assets/82216261/31cdcf00-d5d3-49ce-9651-b97b9d2ad3fa)
+
 ## Contained functionality
 ### Employee management (done by 'admin' user)
 
