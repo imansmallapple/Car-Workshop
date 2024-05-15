@@ -35,4 +35,14 @@ total price (calculated automatically as amount * unit price), e.g. 36.96
 * list of time slots and employees when the vehicle has actually been worked on
 * price paid by the client
 
-## Screenshot Display
+## Getting Started
+1. Go into directory where you plan on keeping project and run.
+```
+  git fork https://github.com/teddysmithdev/RunGroop.git
+```
+2. Create a local database.
+3. Add connection string to app settings.json. It will look something like this:
+```
+  Data Source=DESKTOP-EI2TOGP\\SQLEXPRESS;Initial Catalog=RunGroops;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
+```
+4. Register for a Cloudinary Account (%100 free) and add Cloudname, ApiKey, and Api secret to appsettings.json.
