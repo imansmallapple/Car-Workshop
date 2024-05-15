@@ -34,3 +34,5 @@ estimate of the repair:
 total price (calculated automatically as amount * unit price), e.g. 36.96
 * list of time slots and employees when the vehicle has actually been worked on
 * price paid by the client
+
+## Screenshot Display
